@@ -1,0 +1,15 @@
+.loginStyles {
+  font-family: "Roboto", sans-serif;
+}
+
+.loogedIn {
+  display: none;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .loginStyles {
+    height: auto;
+    width: 100vw;
+  }
+}
