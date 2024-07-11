@@ -1,0 +1,78 @@
+$thick: 2px;
+$pad: 0.9em;
+$extra: calc(#{$pad} * 0.2);
+$color: #f26522;
+.card {
+  background: #2d2d2d;
+}
+.lista-cards {
+  display: grid;
+  background: #2d2d2d;
+  width: 70%; /* Ajusta esto a lo ancho que quieras que sea la imagen por defecto */
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .lista-cards {
+    height: auto;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .lista-cards {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .lista-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .lista-cards img {
+    width: 100%;
+  }
+}
+.Ticketmaster {
+  display: grid;
+  background: #2d2d2d;
+  height: auto;
+  gap: 2px;
+  small {
+    color: white;
+    display: inline-block;
+    border: $thick solid transparent;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+    width: 150%;
+    .text {
+      font-family: proxima-nova, monospace;
+      font-size: 46px;
+      color: white;
+      transform: translate3d(0, $pad, 0);
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+      margin-bottom: 15px;
+    }
+  }
+  img {
+    max-width: 90%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    /* Mantiene la relación de aspecto de la imagen */
+  }
+}
+.lista-cards {
+  background: #2d2d2d;
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  background: #2d2d2d;
+}
+.lista-cards img {
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  width: auto; /* Permite que la imagen se escale según el ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+}

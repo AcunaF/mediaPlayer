@@ -1,0 +1,107 @@
+@media (min-width: 1500px) {
+  .lista-cards,
+  li.game-experiment {
+    display: flex;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 10px auto;
+    width: 100% !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1899.98px) {
+  .lista-cards,
+  li.game-experiment {
+    grid-template-columns: repeat(4, 1fr);
+    width: 100% !important;
+    gap: 4px;
+  }
+  .lista-cards img {
+    width: 180%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .lista-cards,
+  li.game-experiment {
+    height: auto;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .lista-cards,
+  li.game-experiment {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 610) {
+  .lista-cards,
+  li.game-experiment {
+    grid-template-columns: repeat(1, 1fr);
+    image {
+      width: 150% !important;
+    }
+    width: 100% !important;
+  }
+}
+
+$thick: 2px;
+$pad: 0.9em;
+$extra: calc(#{$pad} * 0.2);
+$color: #f26522;
+
+.game-experiment {
+  background: #2d2d2d;
+  height: auto;
+  a {
+    color: #f26522;
+    padding: $pad $extra;
+    display: inline-block;
+    border: $thick solid transparent;
+    position: relative;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+    .text {
+      padding: 0 0.3em;
+      font-family: proxima-nova, monospace;
+      font-size: 46px;
+      color: #f26522;
+      transform: translate3d(0, $pad, 0);
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+      margin-bottom: 10px;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: -$thick;
+      left: $extra;
+      right: $extra;
+      height: $thick;
+      background: $color;
+      z-index: -1;
+      transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s,
+        right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s,
+        left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+      transform-origin: left;
+    }
+  }
+  a:hover,
+  a:active {
+    .text {
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+    }
+
+    &:after {
+      transform: scale3d(0, 1, 1);
+      right: -$thick;
+      left: -$thick;
+      transform-origin: right;
+      transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s,
+        right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.bannerImg {
+  border: 1px solid #2d2d2d;
+  width: 90%;
+  border: 1px;
+  background: #2d2d2d;
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .bannerImg {
+    height: auto;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .bannerImg {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bannerImg {
+    grid-template-columns: repeat(5, 1fr); /* Aumenta el número de columnas */
+    gap: 4px; /* Aumenta el espacio entre los elementos */
+  }
+  .bannerImg img {
+    width: 80%; /* Aumenta el ancho de las imágenes */
+  }
+}

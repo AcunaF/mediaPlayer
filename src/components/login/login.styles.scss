@@ -1,15 +1,20 @@
 .loginStyles {
   font-family: "Roboto", sans-serif;
 }
-
-.loogedIn {
-  display: none;
-  font-size: 16px;
+.form-dark {
+  background: #2d2d2d;
+  color: #333; /* Texto claro */
 }
 
 @media screen and (max-width: 768px) {
-  .loginStyles {
+  .musicaStyles {
     height: auto;
     width: 100vw;
+    img {
+      width: 70%;
+    }
   }
+}
+.p {
+  color: "#f26522";
 }

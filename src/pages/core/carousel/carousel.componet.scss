@@ -1,0 +1,68 @@
+// carousel.component.scss
+
+.carousel {
+  .carousel-inner {
+    .carousel-item {
+      img {
+        width: 100%; // Ajusta el ancho de la imagen al 100% del contenedor
+        height: auto; // Mantiene la proporción original de la imagen
+      }
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .carousel-indicators {
+    li {
+      background-color: #999;
+      margin: 0 3px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+
+      &.active {
+        background-color: #555;
+      }
+    }
+  }
+
+  .line {
+    transform: scale3d(1, 1, 1);
+
+    &.-right {
+      transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+      transform-origin: bottom;
+    }
+
+    &.-top {
+      transition: transform 0.08s linear 0.4s;
+      transform-origin: right;
+    }
+
+    &.-left {
+      transition: transform 0.08s linear 0.48s;
+      transform-origin: top;
+    }
+
+    &.-bottom {
+      transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+      transform-origin: left;
+    }
+  }
+}

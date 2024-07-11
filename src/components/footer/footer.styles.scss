@@ -1,0 +1,32 @@
+.footer {
+  background: #2d2d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  border-top: 1px solid #f26522;
+  font-size: 14px;
+  color: #495057;
+  font-weight: 500;
+  a {
+    color: #495057;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  position: relative;
+}
+.footer-container {
+  color: #495057;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}

@@ -1,24 +1,33 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import imagen3 from "../../assets/multitud-de-conciertos-de-música-rock.jpg";
+import imagen3 from "../../assets/images/banner.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.styles.scss";
 import "../../routes/routes.routes.js";
 import SuccessModal from "../modal/modalSuccess.jsx";
+import ErrorModal from "../modal/modalError.jsx";
+import TicketMaster from "../ticketMaster/ticketMaster.component.jsx";
+import Footer from "../footer/footer.component.jsx";
+import Advertisement from "../../pages/core/publicidad/publisher.components.jsx";
 
 function Login() {
   const [usuario, setUsuario] = useState({
-    correo: "",
-    password: "",
+    correo: "test01@test.te.st",
+    password: "Test01",
   });
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [showModalError, setShowModalError] = useState(false);
   const handleChange = (e) => {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value,
     });
     setError("");
+  };
+
+  const handleBack = () => {
+    window.history.back();
   };
 
   const handleSubmit = async (e) => {
@@ -49,111 +58,107 @@ function Login() {
   };
 
   return (
-    <div className="loginStyles">
-      <div>
-        <form onSubmit={handleSubmit} className="d-flex">
-          <section className="py-3 py-md-5">
-            <div className="col">
-              <div className="row justify-content-center">
-                <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-                  <div className="card border border-dark-subtle rounded-3 shadow-m">
-                    <div className="card-body p-3 p-md-4 p-xl-5">
-                      <div className="text-center mb-3">
-                        <a href="#!">
-                          <img
-                            src={imagen3}
-                            alt="BootstrapBrain Logo"
-                            width="350"
-                            height="157"
+    <>
+      <form onSubmit={handleSubmit} className="d-flex">
+        <section className="py-3 py-md-5">
+          <div className="col">
+            <div className="row justify-content-center">
+              <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+                <div className="card border border-dark-subtle rounded-3 shadow-m form-dark">
+                  <div className="card-body p-3 p-md-4 p-xl-5">
+                    <Advertisement />
+                    <div className="row gy-2 overflow-hidden">
+                      <div className="col-12">
+                        <label htmlFor="correo">Email</label>
+                        <div className="form-floating">
+                          <input
+                            type="mail"
+                            className="form-control"
+                            name="correo"
+                            id="correo"
+                            onChange={handleChange}
+                            required
+                            value={usuario.correo}
                           />
-                        </a>
-                      </div>
-
-                      <h2 className="fs-6 fw-normal text-center text-secondary mb-4">
-                        Sign in to your account
-                      </h2>
-                      <div className="row gy-2 overflow-hidden">
-                        <div className="col-12">
-                          <label htmlFor="correo">Email</label>
-                          <div className="form-floating mb-3">
-                            <input
-                              type="mail"
-                              className="form-control"
-                              name="correo"
-                              id="correo"
-                              onChange={handleChange}
-                              required
-                              value={usuario.correo}
-                            />
-                          </div>
-                        </div>
-                        <label htmlFor="password">Password</label>
-                        <div className="col-12">
-                          <div className="form-floating mb-3">
-                            <input
-                              type="password"
-                              className="form-control"
-                              name="password"
-                              id="password"
-                              onChange={handleChange}
-                              required
-                              value={usuario.password}
-                            />
-                          </div>
-                        </div>
-                        <div className="col-12">
-                          <div className=" looged d-flex gap-2 justify-content-between">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                name="rememberMe"
-                                id="rememberMe"
-                              />
-                              <label
-                                className="form-check-label text-secondary"
-                                htmlFor="rememberMe"
-                              >
-                                <small>Keep me logged in</small>
-                              </label>
-                            </div>
-                            <a
-                              href="#!"
-                              className="link-primary text-decoration-none"
-                            >
-                              <small> Forgot password?</small>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="col-12">
-                          <div className="d-grid my-3">
-                            <button className="btn btn-primary" type="submit">
-                              Log in
-                            </button>
-                          </div>
-                        </div>
-                        <div className="col-12">
-                          <p className="m-0 text-secondary text-center">
-                            Don't have an account?{" "}
-                            <Link
-                              to="/register"
-                              className="link-primary text-decoration-none"
-                            >
-                              Sign up
-                            </Link>
-                          </p>
                         </div>
                       </div>
+                      <label htmlFor="password">Password</label>
+                      <div className="col-12">
+                        <div className="form-floating">
+                          <input
+                            type="password"
+                            className="form-control"
+                            name="password"
+                            id="password"
+                            onChange={handleChange}
+                            required
+                            value={usuario.password}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className=" looged d-flex gap-2 justify-content-between">
+                          <div className="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              name="rememberMe"
+                              id="rememberMe"
+                            />
+                            <label
+                              className="form-check-label text-secondary"
+                              htmlFor="rememberMe"
+                            >
+                              <small>Keep me logged in</small>
+                            </label>
+                          </div>
+                          <a
+                            href="#!"
+                            className="link-primary text-decoration-none"
+                          >
+                            <small> Forgot password?</small>
+                          </a>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="d-flex d-grid my-3">
+                          <button
+                            className="btn btn-primary"
+                            type="submit"
+                            style={{ backgroundColor: "#f26522" }}
+                          >
+                            Log in
+                          </button>
+                          <button
+                            onClick={handleBack}
+                            className="btn btn-primary"
+                          >
+                            Back
+                          </button>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <p className="m-0 text-secondary text-center">
+                          Don't have an account?
+                          <Link
+                            to="/register"
+                            className="link-primary text-decoration-none"
+                          >
+                            Sign up
+                          </Link>
+                        </p>
+                      </div>
+                      <Footer />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-        </form>
-        <SuccessModal isOpen={showModal} onClose={() => setShowModal(false)} />
-      </div>
-    </div>
+          </div>
+        </section>
+      </form>
+      <SuccessModal isOpen={showModal} onClose={() => setShowModal(false)} />
+    </>
   );
 }
 

@@ -1,0 +1,75 @@
+/* image.styles.scss */
+/* Estilo base del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el input de archivo */
+input[type="file"] {
+  border: 2px solid transparent;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: #f26522;
+  }
+
+  &::file-selector-button {
+    display: none;
+  }
+}
+
+/* Estilo para el botón de enviar */
+button[type="submit"] {
+  background-color: #f26522;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e44c06;
+  }
+}
+
+/* Estilo adicional para hacerlo más futurista */
+form {
+  backdrop-filter: blur(5px);
+}
+
+input[type="file"],
+button[type="submit"] {
+  box-shadow: 0 0 15px #e44c06(100, 108, 255, 0.5);
+}
+
+/* Animación para el botón */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px #e44c06(100, 108, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px #e44c06(100, 108, 255, 0.75);
+  }
+  100% {
+    box-shadow: 0 0 15px #e44c06(100, 108, 255, 0.5);
+  }
+}
+
+button[type="submit"]:hover {
+  animation: pulse 1s infinite;
+}

@@ -1,0 +1,14 @@
+.image-gallery {
+  margin-top: 40px;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+}

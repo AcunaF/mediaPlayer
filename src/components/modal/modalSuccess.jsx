@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+import "./modal.styles.scss";
 function SuccessModal({ isOpen, onClose }) {
+  const navigate = useNavigate();
+
+  const goToPrincipal = () => {
+    navigate("/principal");
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -20,7 +28,7 @@ function SuccessModal({ isOpen, onClose }) {
             <button
               type="button"
               className="btn btn-secondary"
-              onClick={onClose}
+              onClick={goToPrincipal}
             >
               Cerrar
             </button>
