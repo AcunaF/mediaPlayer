@@ -80,22 +80,8 @@ const NumberConverter = () => {
         </div>*/}
         <TicketMaster />
         <VideoPlayer />
-        <div
-          style={{
-            justifyContent: "center",
-            display: "flex",
 
-            border: "5px solid white",
-            padding: "10px",
-            margin: "10px",
-          }}
-          className="d-flex"
-        >
-          <GuardarVideo />
-          <GuardarImagen />
-        </div>
         <FloatingChatButton />
-
         <Footer className="footer" />
       </div>
     </div>

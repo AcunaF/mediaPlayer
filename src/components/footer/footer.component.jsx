@@ -7,7 +7,7 @@ import {
   FaCcMastercard,
   FaCcPaypal,
   FaCcAmazonPay,
-} from "react-icons/fa"; // Importa los iconos que necesitas
+} from "react-icons/fa";
 import "./footer.styles.scss";
 import descarga6 from "../../assets/images/multitud-de-conciertos-de-música-rock.jpg";
 const Footer = () => {

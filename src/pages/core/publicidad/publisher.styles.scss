@@ -1,27 +1,259 @@
-.publicidad {
-  width: 100% !important;
-  display: inline-block;
-  position: relative;
-  font-size: 1.5em;
+$thick: 2px;
+$pad: 0.9em;
+$extra: calc(#{$pad} * 0.2);
+$color: #f26522;
+
+.game-experiment {
+  background: #2d2d2d;
+  height: auto;
+  a {
+    color: #f26522;
+    padding: $pad $extra;
+    display: inline-block;
+    border: $thick solid transparent;
+    position: relative;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+    .text {
+      padding: 0 0.3em;
+      font-family: proxima-nova, monospace;
+      font-size: 46px;
+      color: #f26522;
+      transform: translate3d(0, $pad, 0);
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+      margin-bottom: 10px;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: -$thick;
+      left: $extra;
+      right: $extra;
+      height: $thick;
+      background: $color;
+      z-index: -1;
+      transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s,
+        right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s,
+        left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+      transform-origin: left;
+    }
+  }
+
+  .line {
+    position: absolute;
+    background: $color;
+
+    &.-right,
+    &.-left {
+      width: $thick;
+      bottom: -$thick;
+      top: -$thick;
+      transform: scale3d(1, 0, 1);
+    }
+
+    &.-top,
+    &.-bottom {
+      height: $thick;
+      left: -$thick;
+      right: -$thick;
+      transform: scale3d(0, 1, 1);
+    }
+
+    &.-right {
+      right: -$thick;
+      transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+      transform-origin: top;
+    }
+
+    &.-top {
+      top: -$thick;
+      transition: transform 0.08s linear 0.43s;
+      transform-origin: left;
+    }
+
+    &.-left {
+      left: -$thick;
+      transition: transform 0.08s linear 0.51s;
+      transform-origin: bottom;
+    }
+
+    &.-bottom {
+      bottom: -$thick;
+      transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+      transform-origin: right;
+    }
+  }
+
+  a:hover,
+  a:active {
+    .text {
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+    }
+
+    &:after {
+      transform: scale3d(0, 1, 1);
+      right: -$thick;
+      left: -$thick;
+      transform-origin: right;
+      transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s,
+        right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+    }
+  }
+}
+button[type="submit"] {
+  background-color: #f26522;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
   cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e44c06;
+  }
+}
+.main-pages {
+  display: flex;
 }
 
-.publicidad img {
-  width: 100%;
-  height: 200px;
+h1 {
+  color: #f26522;
+  background-position: center;
+  display: flex;
+  cursor: pointer;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-position: center;
+
+  padding: $pad $extra;
+  font-size: 2.5em;
+  cursor: pointer;
+  letter-spacing: 0.07em;
   display: block;
 }
-.tittle-publicidad {
+
+.container-principal {
+  background-color: #1a1a1a;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+@media (min-width: 1000px) {
+  .ticketmaster {
+    grid-template-columns: repeat(6, 1fr);
+    margin: 10px auto;
+    width: 500% !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1899.98px) {
+  .ticketmaster {
+    grid-template-columns: repeat(4, 1fr);
+    width: 100% !important;
+    gap: 4px;
+  }
+  .container-principal img {
+    width: 80%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .ticketmaster {
+    height: auto;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ticketmaster {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100% !important;
+  }
+}
+
+.Ticketmaster {
+  background: #2d2d2d;
+  height: auto;
+  a {
+    color: #495057;
+    padding: $pad $extra;
+    display: inline-block;
+    border: $thick solid transparent;
+    position: relative;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+
+    .text {
+      padding: 0 0.3em;
+      font-family: proxima-nova, monospace;
+      font-size: 46px;
+      color: white;
+      transform: translate3d(0, $pad, 0);
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+}
+
+.upload-cv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offers-table {
+  margin-top: 20px;
+  width: 80%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #444;
   color: white;
 }
-.publicidad-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 1.5em;
-  text-align: center;
-  width: 100%;
-  display: none;
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #555;
+}
+
+th {
+  background-color: #555;
+}
+.form-result {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
 }

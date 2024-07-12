@@ -16,7 +16,7 @@ const Favorite = () => {
   const initialElements = [
     { id: 1, content: "Musica", image: descarga1, path: "/music" },
     { id: 2, content: "Github", image: descarga2, path: "/ebooks" },
-    { id: 3, content: "ChatGpt", image: descarga3, path: "/chatGpt" },
+    { id: 3, content: "Job Offers", image: descarga3, path: "/chatGpt" },
     { id: 4, content: "Social Network", image: descarga4, path: "/social" },
     { id: 5, content: "Unplug", image: descarga5, path: "/unplug" },
     { id: 6, content: "To work", image: descarga8, path: "/contact" },

@@ -33,7 +33,7 @@ function GuardarImagen() {
   return (
     <form onSubmit={guardarImagen}>
       <input type="file" onChange={manejarCambio} />
-      <button type="submit">Guardar Imagen</button>
+      <button type="submit">Cargar Archivo</button>
     </form>
   );
 }

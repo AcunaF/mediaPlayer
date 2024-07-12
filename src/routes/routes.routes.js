@@ -10,7 +10,7 @@ import Social from "../pages/core/principal/sNetwork/Social.principal.jsx";
 import Unplug from "../pages/core/principal/unplug/unplug.principal.jsx";
 import Juegos from "../components/games/games.jsx";
 import Messages from "../components/Messages/messages.component.jsx";
-import Example from "../components/shop/shop.jsx";
+import Advertisement from "../pages/core/publicidad/publisher.components.jsx";
 
 // Lazy loading de componentes
 const RegisterForm = lazy(() =>
@@ -40,7 +40,7 @@ function RoutesComponent() {
 
           {/*Principal*/}
           <Route path="/message" element={<Messages />} />
-          <Route path="/chatgpt" element={<Example />} />
+          <Route path="/chatgpt" element={<Advertisement />} />
           <Route path="/music" element={<Music />} />
           <Route path="/juegos" element={<Juegos />} />
           <Route path="/contact" element={<ContactsPrincipal />} />
@@ -63,3 +63,4 @@ function RoutesComponent() {
 }
 
 export default RoutesComponent;
+/*  */

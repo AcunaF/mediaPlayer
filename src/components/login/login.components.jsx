@@ -66,7 +66,6 @@ function Login() {
               <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
                 <div className="card border border-dark-subtle rounded-3 shadow-m form-dark">
                   <div className="card-body p-3 p-md-4 p-xl-5">
-                    <Advertisement />
                     <div className="row gy-2 overflow-hidden">
                       <div className="col-12">
                         <label htmlFor="correo">Email</label>
