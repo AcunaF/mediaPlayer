@@ -1,7 +1,7 @@
 import "./publisher.styles.scss";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import GuardarImagen from "../../../components/uploadImage/image.component";
+import axios from "axios";
 import {
   FaLinkedin,
   FaBriefcase,
@@ -13,6 +13,22 @@ const Advertisement = () => {
   const navigate = useNavigate();
   const handleBack = () => {
     navigate("/principal");
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    try {
+      await axios.post("http://localhost:3001/cv/curriculum", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      alert("Currículum recibido y analizado correctamente");
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      alert("Error al enviar el formulario");
+    }
   };
   return (
     <>
@@ -47,12 +63,83 @@ const Advertisement = () => {
                 </table>
               </div>
             </div>
-            <div style={{ color: "white" }} className="col">
-              <p>Carga tu cv</p>
-              <div style={{}} className="">
-                <GuardarImagen />
-              </div>{" "}
+
+            <div className="container-fluid">
+              <h1>Subi tu CV</h1>
+              <form onSubmit={handleSubmit} encType="multipart/form-data">
+                <div>
+                  <label
+                    style={{ color: "#f26522", margin: "20px" }}
+                    htmlFor="nombre"
+                  >
+                    Nombre
+                  </label>
+                  <input type="text" id="nombre" name="nombre" required />
+                </div>
+                <div>
+                  <label
+                    style={{ color: "#f26522", margin: "20px" }}
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div>
+                  <label
+                    style={{ color: "#f26522", margin: "20px" }}
+                    htmlFor="telefono"
+                  >
+                    Teléfono
+                  </label>
+                  <input type="tel" id="telefono" name="telefono" required />
+                </div>
+                <div>
+                  <label
+                    style={{ color: "#f26522", margin: "20px" }}
+                    htmlFor="especialidad"
+                  >
+                    Especialidad
+                  </label>
+                  <select id="especialidad" name="especialidad" required>
+                    <option value="Backend">Desarrollador Back</option>
+                    <option value="Frontend">Desarrollador Front</option>
+                    <option value="Fullstack">Desarrollador Fullstack</option>
+                    <option value="DevOps">DevOps</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    style={{ color: "#f26522", margin: "20px" }}
+                    htmlFor="seniority"
+                  >
+                    Señority
+                  </label>
+                  <select id="seniority" name="seniority" required>
+                    <option value="Trainee">Trainee</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Ssr">Ssr</option>
+                    <option value="Senior">Sr</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    style={{ color: "#f26522", margin: "20px" }}
+                    htmlFor="curriculum"
+                  >
+                    Carga tu CV
+                  </label>
+                  <input
+                    type="file"
+                    id="curriculum"
+                    name="curriculum"
+                    required
+                  />
+                </div>
+                <button type="submit">Enviar</button>
+              </form>
             </div>
+
             <div className="footer">
               <button onClick={handleBack}>Back to principal</button>
             </div>
@@ -112,9 +199,10 @@ const Advertisement = () => {
               <form className="form-result">
                 <select>
                   <option value="">Seleccione categoría</option>
-                  <option value="back">Desarrollador Back</option>
-                  <option value="front">Desarrollador Front</option>
-                  <option value="fullstack">Desarrollador Fullstack</option>
+                  <option value="Backend">Backend</option>
+                  <option value="Frontend">Frontend</option>
+                  <option value="Fullstack">Fullstack</option>
+                  <option value="DevOps">Devops</option>
                 </select>{" "}
                 <select>
                   <option value="">Seleccione tecnologia</option>

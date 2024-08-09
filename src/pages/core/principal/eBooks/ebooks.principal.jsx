@@ -108,14 +108,20 @@ const Ebooks = () => {
             <option value="react">React</option>
             <option value="nodejs">Node.js</option>
           </select>
-          <input type="text" placeholder="Buscar por nombre" />
-          <button type="submit">Buscar</button>
+          <select>
+            <option value="">Seleccione condicion</option>
+            <option value="back">Habilitado</option>
+            <option value="front">No habilitado</option>
+            <option value="fullstack">Pendiente</option>
+          </select>
+          <hr></hr>
           <input type="text" placeholder="Buscar por apellido" />
           <button type="submit">Buscar</button>
           <input type="text" placeholder="Buscar por correo" />
           <button type="submit">Buscar</button>
           <input type="text" placeholder="Buscar por cargo" />
           <button type="submit">Buscar</button>
+          <hr></hr>
         </div>
         <h1>Search result</h1>
         <div className="card-result mt-4">

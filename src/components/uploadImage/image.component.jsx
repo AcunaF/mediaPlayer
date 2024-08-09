@@ -13,8 +13,7 @@ function GuardarImagen() {
     formData.append("imagen", imagen);
 
     try {
-      // Usando fetch
-      const respuesta = await fetch("http://localhost:3001/api/image", {
+      const respuesta = await fetch("http://localhost:3001/cv/curriculum", {
         method: "POST",
         body: formData,
       });
