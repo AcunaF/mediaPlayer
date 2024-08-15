@@ -59,7 +59,7 @@ function Login() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="d-flex">
+      <form onSubmit={handleSubmit} className="container-login d-flex">
         <section className="py-3 py-md-5">
           <div className="col">
             <div className="row justify-content-center">

@@ -18,3 +18,11 @@
 .p {
   color: "#f26522";
 }
+
+@media screen and (max-width: 1400) {
+  .container-login {
+    min-width: "auto";
+  }
+}
+
+

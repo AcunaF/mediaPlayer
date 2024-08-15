@@ -17,26 +17,29 @@ $color: #f26522;
   justify-content: center;
 }
 .card-result {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
   max-width: 100%;
   width: auto;
   height: auto;
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 @media (min-width: 1000px) {
   .container-gral {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin: 10px auto;
     width: 500% !important;
   }
 }
 @media (min-width: 1200px) and (max-width: 1899.98px) {
   .container-gral {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 100% !important;
     gap: 4px;
   }

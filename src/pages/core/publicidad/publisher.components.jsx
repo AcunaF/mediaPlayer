@@ -106,6 +106,7 @@ const Advertisement = () => {
                     <option value="Frontend">Desarrollador Front</option>
                     <option value="Fullstack">Desarrollador Fullstack</option>
                     <option value="DevOps">DevOps</option>
+                    <option value="Project Manager">Project Manager</option>
                   </select>
                 </div>
                 <div>

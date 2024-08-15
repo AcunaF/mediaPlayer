@@ -4,7 +4,6 @@ import Footer from "../../../components/footer/footer.component";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TicketMaster from "../../../components/ticketMaster/ticketMaster.component";
-import Upcoming from "../upcoming/upcoming.components";
 import VideoPlayer from "../../core/event/event.component";
 import Favorite from "../../../components/favorite/favorite.components";
 import descarga1 from "../../../assets/images/descarga1.png";
@@ -13,8 +12,6 @@ import descarga3 from "../../../assets/images/artificial.webp";
 import descarga4 from "../../../assets/images/descarga4.png";
 import descarga5 from "../../../assets/images/descarga5.png";
 import descarga8 from "../../../assets/images/microsoft_visual_studio_code.webp";
-import GuardarImagen from "../../../components/uploadImage/image.component";
-
 import "./styles.scss";
 import React from "react";
 import FloatingChatButton from "../../../components/FloatingChatButton/FloatingChatButton";
@@ -41,7 +38,10 @@ const NumberConverter = () => {
   };
 
   return (
-    <div className="game-experiment">
+    <div 
+    
+    style={{padding: 0}}
+    className="game-experiment">
       <div className="music-title">
         <div className="overlay"> </div>
       </div>
